@@ -3,15 +3,16 @@
 <h1>Listing Products</h1>
 
 
+<h1>Fun and Creative Items</h1>
+<p>Thinking outside the box expressions</p>
 
 <div class="container-fluid">
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-sm-2 col-md-4">
         <%= image_tag(product.image_url, class: "img-responsive") %>
-        <h1>Fun and Creative Items</h1>
-        <p> Thinking outside the box expressions</p>
-        <strong>$ 42</strong>
+        <p><%= product.description %></p>
+        <strong>$<%= product.price %></strong>
       </div><!-- /col -->
     <% end %>
   </div>
@@ -20,3 +21,4 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<%= @test_variable %>
