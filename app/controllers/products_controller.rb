@@ -61,15 +61,37 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def landing_page
+      @featured_product = Product.first
+  end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
     end
+    
+   def index
+   if params[:q]
+    search_term = params[:q]
+    # return our filtered list here
+  else
+   @products = Product.where("name LIKE ?", "%#{search_term}%")
+   end
+   end
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
-end
