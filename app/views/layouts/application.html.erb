@@ -33,10 +33,14 @@
     </nav>
     
     
-    
-    
-    <%= yield %>
+  <%= yield %>
 
+   <% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %><% if notice %>
+    <p id="alert" class="notice notice-info"><%= alert %></p>
+    
+<% end %>
 <footer>
   &copy; 2016 Fundalicious
 </footer>
