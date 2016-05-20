@@ -1,16 +1,21 @@
 
-<p class="notice"><%= notice %></p>
-<<<<<<< HEAD
-       <p class="alert"><%= alert %></p>
-=======
-<p class="alert"><%= alert %></p>
->>>>>>> master
+<!--<p class="notice"><%= notice %></p>-->
 
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<!--       <p class="alert"><%= alert %></p>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Ruby Project 2.0</title>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!--=====add BOOTSTRAP CDN after JAVASCRIPT because it depends on JQUERY which is loaded with the JAVASCRIPT tag above =====-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--=====add the responsive TAG at the end of all other HEAD tags=====-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -30,10 +35,9 @@
   <% end %>
   </li>
 
-        </ul>
-=======
+        
 </ul>
->>>>>>> master
+
         <%= form_tag("/products", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
