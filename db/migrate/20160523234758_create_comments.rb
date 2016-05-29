@@ -9,4 +9,4 @@ class CreateComments < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
-end
+ end
