@@ -80,6 +80,12 @@ end
   else
    @products = Product.where("name LIKE ?", "%#{search_term}%")
    end
+   
+   # GET /products/1
+# GET /products/1.json
+def show
+  @comments = @product.comments.order("created_at DESC")
+end
    end
     
     
