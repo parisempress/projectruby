@@ -8,10 +8,11 @@ class ProductsController < ApplicationController
     # @test_variable =42
   end
 
-  # GET /products/1
-  # GET /products/1.json
-  def show
-  end
+ # GET /products/1
+# GET /products/1.json
+def show
+  @comments = @product.comments.order("created_at DESC")
+end
 
   # GET /products/new
   def new
@@ -81,11 +82,7 @@ end
    @products = Product.where("name LIKE ?", "%#{search_term}%")
    end
    
-   # GET /products/1
-# GET /products/1.json
-def show
-  @comments = @product.comments.order("created_at DESC")
-end
+   
    end
     
     
