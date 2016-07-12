@@ -1,11 +1,21 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
+  # def index
+  #   @products = Product.limit(3)
+  #   # @test_variable =42
+  # end
+  
   def index
-    @products = Product.limit(3)
-    # @test_variable =42
+    if params[:q]
+      search_term = params[:q]
+      p @products = Product.where("name LIKE ?", "%#{search_term}%") # return our filtered list here
+    else
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+    end
   end
 
  # GET /products/1
@@ -74,20 +84,13 @@ end
       @product = Product.find(params[:id])
     end
     
-   def index
-   if params[:q]
-    search_term = params[:q]
-    # return our filtered list here
-  else
-   @products = Product.where("name LIKE ?", "%#{search_term}%")
-   end
-   
-   
-   end
+  
     
     
     
-    
+    def set_user
+      @user = User.current_user
+    end
     
     
     
