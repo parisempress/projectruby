@@ -89,7 +89,7 @@ end
     
     
     def set_user
-      @user = User.current_user
+      @user = current_user
     end
     
     

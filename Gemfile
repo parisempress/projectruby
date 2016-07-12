@@ -68,5 +68,5 @@ gem 'devise'
 gem 'cancancan'
 gem 'will_paginate'
 gem 'stripe'
-
+gem 'elevatezoom-rails'
 
