@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   #   @products = Product.limit(3)
   #   # @test_variable =42
   # end
+  respond_to :json, :html
   
   def index
     if params[:q]
@@ -16,6 +17,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.where("name LIKE ?", "%#{search_term}%")
     end
+     respond_with @products
   end
 
  # GET /products/1

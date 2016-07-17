@@ -71,4 +71,6 @@ gem 'stripe'
 gem 'elevatezoom-rails'
 gem 'angularjs-rails'
 gem 'dalli'
+gem 'redis-rails'
+
 
